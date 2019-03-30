@@ -14,10 +14,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {CapacityModule} from '@app/capacity/capacity.module';
 import {CategoryModule} from '@app/category/category.module';
-
-import { ItemComponent } from './item/item.component';
-
 import {ModelItemModule} from '@app/model-item/model-item.module';
+import {ItemModule} from '@app/item/item.module';
 
 
 @NgModule({
@@ -34,11 +32,12 @@ import {ModelItemModule} from '@app/model-item/model-item.module';
     CapacityModule,
     CategoryModule,
     ModelItemModule,
+    ItemModule,
     AboutModule,
 
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
-  declarations: [AppComponent, ItemComponent],
+  declarations: [AppComponent],
   providers: [
   ],
   bootstrap: [AppComponent]

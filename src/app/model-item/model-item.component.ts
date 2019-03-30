@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ModelItem} from '@app/shared/model/model-item';
+import {ModelItemService} from '@app/shared/service/model-item.service';
 
 @Component({
   selector: 'app-model-item',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModelItemComponent implements OnInit {
 
-  constructor() { }
+  modelItems: ModelItem[];
+  constructor(private modelItemService: ModelItemService) {
+    this.modelItems = [];
+  }
 
   ngOnInit() {
+    this.modelItemService.getModelItems().subscribe(value => {
+      this.modelItems = value;
+    });
   }
 
 }
