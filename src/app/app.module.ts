@@ -18,6 +18,10 @@ import {ModelItemModule} from '@app/model-item/model-item.module';
 import {ItemModule} from '@app/item/item.module';
 import {InventoryModule} from '@app/inventory/inventory.module';
 import {InventoryStateModule} from '@app/inventory-state/inventory-state.module';
+import {ItemImageModule} from '@app/item-image/item-image.module';
+import {SaleDetailModule} from '@app/sale-detail/sale-detail.module';
+import {SaleModule} from '@app/sale/sale.module';
+import {CustomerModule} from '@app/customer/customer.module';
 
 
 
@@ -38,6 +42,10 @@ import {InventoryStateModule} from '@app/inventory-state/inventory-state.module'
     ItemModule,
     InventoryModule,
     InventoryStateModule,
+    ItemImageModule,
+    SaleDetailModule,
+    SaleModule,
+    CustomerModule,
     AboutModule,
 
     AppRoutingModule // must be imported as the last module as it contains the fallback route
