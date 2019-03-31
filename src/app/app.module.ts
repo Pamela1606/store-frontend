@@ -16,6 +16,9 @@ import {CapacityModule} from '@app/capacity/capacity.module';
 import {CategoryModule} from '@app/category/category.module';
 import {ModelItemModule} from '@app/model-item/model-item.module';
 import {ItemModule} from '@app/item/item.module';
+import {InventoryModule} from '@app/inventory/inventory.module';
+import {InventoryStateModule} from '@app/inventory-state/inventory-state.module';
+
 
 
 @NgModule({
@@ -33,6 +36,8 @@ import {ItemModule} from '@app/item/item.module';
     CategoryModule,
     ModelItemModule,
     ItemModule,
+    InventoryModule,
+    InventoryStateModule,
     AboutModule,
 
     AppRoutingModule // must be imported as the last module as it contains the fallback route
