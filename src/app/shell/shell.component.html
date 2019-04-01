@@ -4,66 +4,6 @@
     <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0">
       <ngb-panel>
         <ng-template ngbPanelTitle>
-          <span><a class="nav-item nav-link text-uppercase" routerLink="/brands" routerLinkActive="active">
-          <i class="fas fa-save"><span>Brand</span></i>
-
-        </a></span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          <ul>
-            <li>Opcion 1</li>
-            <li>Opcion 2</li>
-            <li>Opcion 3</li>
-          </ul>
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel>
-        <ng-template ngbPanelTitle>
-          <span><a class="nav-item nav-link text-uppercase" routerLink="/capacity" routerLinkActive="active">
-          <i class="fas fa-save"><span>Capacity</span></i>
-
-        </a></span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          <ul>
-            <li>Opcion 1</li>
-            <li>Opcion 2</li>
-            <li>Opcion 3</li>
-          </ul>
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel>
-        <ng-template ngbPanelTitle>
-          <span><a class="nav-item nav-link text-uppercase" routerLink="/category" routerLinkActive="active">
-          <i class="fas fa-save"><span>Category</span></i>
-
-        </a></span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          <ul>
-            <li>Opcion 1</li>
-            <li>Opcion 2</li>
-            <li>Opcion 3</li>
-          </ul>
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel>
-        <ng-template ngbPanelTitle>
-          <span><a class="nav-item nav-link text-uppercase" routerLink="/model-item" routerLinkActive="active">
-          <i class="fas fa-save"><span>Model</span></i>
-
-        </a></span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          <ul>
-            <li>Opcion 1</li>
-            <li>Opcion 2</li>
-            <li>Opcion 3</li>
-          </ul>
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel>
-        <ng-template ngbPanelTitle>
           <span><a class="nav-item nav-link text-uppercase" routerLink="/item" routerLinkActive="active">
           <i class="fas fa-save"><span>Item</span></i>
 
@@ -71,9 +11,34 @@
         </ng-template>
         <ng-template ngbPanelContent>
           <ul>
-            <li>Opcion 1</li>
-            <li>Opcion 2</li>
-            <li>Opcion 3</li>
+            <li>
+              <span>
+                <a class="nav-item nav-link text-uppercase" routerLink="/brands" routerLinkActive="active">
+                 <i class="fas fa-save"><span>Marca</span></i>
+               </a>
+              </span>
+            </li>
+            <li>
+               <span>
+                <a class="nav-item nav-link text-uppercase" routerLink="/capacity" routerLinkActive="active">
+                 <i class="fas fa-save"><span>Capacidad</span></i>
+               </a>
+              </span>
+            </li>
+            <li>
+               <span>
+                <a class="nav-item nav-link text-uppercase" routerLink="/category" routerLinkActive="active">
+                 <i class="fas fa-save"><span>Categoría</span></i>
+               </a>
+              </span>
+            </li>
+            <li>
+               <span>
+                <a class="nav-item nav-link text-uppercase" routerLink="/model-item" routerLinkActive="active">
+                 <i class="fas fa-save"><span>Modelo</span></i>
+               </a>
+              </span>
+            </li>
           </ul>
         </ng-template>
       </ngb-panel>
@@ -86,24 +51,13 @@
         </ng-template>
         <ng-template ngbPanelContent>
           <ul>
-            <li>Opcion 1</li>
-            <li>Opcion 2</li>
-            <li>Opcion 3</li>
-          </ul>
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel>
-        <ng-template ngbPanelTitle>
-          <span><a class="nav-item nav-link text-uppercase" routerLink="/inventoryState" routerLinkActive="active">
-          <i class="fas fa-save"><span>State</span></i>
-
-        </a></span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          <ul>
-            <li>Opcion 1</li>
-            <li>Opcion 2</li>
-            <li>Opcion 3</li>
+            <li>
+               <span>
+                <a class="nav-item nav-link text-uppercase" routerLink="/inventoryState" routerLinkActive="active">
+                 <i class="fas fa-save"><span>Estado</span></i>
+               </a>
+              </span>
+            </li>
           </ul>
         </ng-template>
       </ngb-panel>
@@ -124,21 +78,6 @@
       </ngb-panel>
       <ngb-panel>
         <ng-template ngbPanelTitle>
-          <span><a class="nav-item nav-link text-uppercase" routerLink="/sale-detail" routerLinkActive="active">
-          <i class="fas fa-save"><span>Detail</span></i>
-
-        </a></span>
-        </ng-template>
-        <ng-template ngbPanelContent>
-          <ul>
-            <li>Opcion 1</li>
-            <li>Opcion 2</li>
-            <li>Opcion 3</li>
-          </ul>
-        </ng-template>
-      </ngb-panel>
-      <ngb-panel>
-        <ng-template ngbPanelTitle>
           <span><a class="nav-item nav-link text-uppercase" routerLink="/sale" routerLinkActive="active">
           <i class="fas fa-save"><span>Sale</span></i>
 
@@ -146,9 +85,13 @@
         </ng-template>
         <ng-template ngbPanelContent>
           <ul>
-            <li>Opcion 1</li>
-            <li>Opcion 2</li>
-            <li>Opcion 3</li>
+            <li>
+               <span>
+                <a class="nav-item nav-link text-uppercase" routerLink="/sale-detail" routerLinkActive="active">
+                 <i class="fas fa-save"><span>Detalle</span></i>
+               </a>
+              </span>
+            </li>
           </ul>
         </ng-template>
       </ngb-panel>
@@ -167,7 +110,6 @@
           </ul>
         </ng-template>
       </ngb-panel>
-
 
     </ngb-accordion>
   </div>
