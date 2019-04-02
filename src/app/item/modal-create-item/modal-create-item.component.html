@@ -1,0 +1,56 @@
+<ngx-smart-modal #popupItem [identifier]="'popupItem'">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form_main">
+          <h4 class="heading"><strong>Quick </strong> Item <span></span></h4>
+          <div class="form">
+            <input
+              #name
+              type="text"
+              required=""
+              placeholder="Ingresar el Nombre"
+              value="" name="name"
+              class="txt">
+          </div>
+          <div class="form">
+            <input
+              #name
+              type="text"
+              required=""
+              placeholder="Ingresar la Descripción"
+              value="" name="name"
+              class="txt">
+          </div>
+          <div class="form">
+            <input
+              #name
+              type="text"
+              required=""
+              placeholder="Impuesto"
+              value="" name="name"
+              class="txt">
+          </div>
+          <div class="col-md-9">
+            <select class="form-control"  size="0" name="currentBrand"  (change)="onChangeCurrentBrand($event.target.value)">
+              <option value="{{brand.id}}" *ngFor="let brand of brands" >{{brand.name}}</option>
+            </select>
+            <div><br></div>
+            <select class="form-control"  size="0" name="currentCategory"  (change)="onChangeCurrentCategory($event.target.value)">
+              <option value="{{category.id}}" *ngFor="let category of categories" >{{category.name}}</option>
+            </select>
+            <div><br></div>
+            <select class="form-control"  size="0" name="currentModelItem"  (change)="onChangeCurrentModelItem($event.target.value)">
+              <option value="{{modelItem.id}}" *ngFor="let modelItem of modelItems" >{{modelItem.name}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <button class="btn-primary" (click)="popupItem.close()">Cancelar</button>
+    <button class="btn-primary" (click)="onCreate(name.value)">Crear</button>
+  </div>
+
+</ngx-smart-modal>

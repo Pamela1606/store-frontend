@@ -3,8 +3,7 @@ import {BrandService} from '@app/shared/service/brand.service';
 import {Brand} from '@app/shared/model/brand';
 import {NgxSmartModalService} from 'ngx-smart-modal';
 import swal from 'sweetalert2';
-import {Category} from '@app/shared/model/category';
-import {CategoryService} from '@app/shared/service/category.service';
+
 
 @Component({
   selector: 'app-brand',
