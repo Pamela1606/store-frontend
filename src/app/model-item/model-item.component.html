@@ -1,3 +1,37 @@
-<p>
-  model-item works!
-</p>
+<app-modal-create-model-item></app-modal-create-model-item>
+<div class="ibox-body">
+
+  <button class="btn btn-warning" (click)="ngxSmartModalService.getModal('popupModelItem').open()">(+) Nuevo modelo </button>
+  <br>
+  <p></p>
+  <table class="table table-striped table-head-purple" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+    <thead>
+    <tr>
+      <th style="width: 20%">
+        <mfDefaultSorter by="name">Nro</mfDefaultSorter>
+      </th>
+      <th style="width: 50%">
+        <mfDefaultSorter by="email">Nombre</mfDefaultSorter>
+      </th>
+      <th> Operacion</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of mf.data">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>
+        <i class="fa fa-pencil-square-o" (click)="onEditModelItem(item)" title="Editar Modelo {{item.nombre}}"></i>
+        <i class="fa fa-trash" (click)="onDeleteModelItem(item.id)" title="Eliminar Modelo {{item.nombre}}"></i>
+      </td>
+    </tr>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="4">
+        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+      </td>
+    </tr>
+    </tfoot>
+  </table>
+</div>
