@@ -1,30 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import {CategoryService} from '@app/shared/service/category.service';
-import {Category} from '@app/shared/model/category';
+import {BrandService} from '@app/shared/service/brand.service';
+import {Brand} from '@app/shared/model/brand';
 import {NgxSmartModalService} from 'ngx-smart-modal';
 import swal from 'sweetalert2';
 
-export interface CategoriaModel {
+
+export interface BrandModel {
   id?: number;
   name?: string;
   action?: string;
 }
+
 @Component({
-  selector: 'app-modal-crear-category',
-  templateUrl: './modal-crear-category.component.html',
-  styleUrls: ['./modal-crear-category.component.scss']
+  selector: 'app-modal-create-brand',
+  templateUrl: './modal-create-brand.component.html',
+  styleUrls: ['./modal-create-brand.component.scss']
 })
-export class ModalCrearCategoryComponent  implements OnInit {
+export class ModalCreateBrandComponent implements OnInit {
+
   action = 'new'
-  category: Category;
-  constructor(private categoryService: CategoryService, public ngxSmartModalService: NgxSmartModalService ) {
-    this.category = new Category();
+  brand: Brand;
+  constructor(private brandService: BrandService, public ngxSmartModalService: NgxSmartModalService ) {
+    this.brand = new Brand();
   }
   ngOnInit() {
   }
   onCreate(name: string) {
-    this.category.name = name;
-    this.categoryService.createCategory(this.category).subscribe(response => {
+    this.brand.name = name;
+    this.brandService.createBrand(this.brand).subscribe(response => {
       console.log(response);
       this.resultr()
       this.ngxSmartModalService.closeLatestModal();
@@ -33,7 +36,7 @@ export class ModalCrearCategoryComponent  implements OnInit {
   }
   resultr() {
     swal({
-      title: 'Creando Categoría',
+      title: 'Creando Brand',
       text: 'Se ha adicionado un Dpto con exito',
       timer: 600,
       onOpen: () => {

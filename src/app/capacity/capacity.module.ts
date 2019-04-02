@@ -7,6 +7,8 @@ import { SharedModule } from '@app/shared';
 import { CapacityRoutingModule } from './capacity-routing.module';
 import { CapacityComponent } from './capacity.component';
 import {DataTableModule} from 'angular2-datatable';
+import { ModalCreateCapacityComponent } from './modal-create-capacity/modal-create-capacity.component';
+import {NgxSmartModalModule, NgxSmartModalService} from 'ngx-smart-modal';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,12 +16,13 @@ import {DataTableModule} from 'angular2-datatable';
     CoreModule,
     SharedModule,
     CapacityRoutingModule,
-    DataTableModule
+    DataTableModule,
+    NgxSmartModalModule.forRoot(),
   ],
   declarations: [
-    CapacityComponent
+    CapacityComponent,
+    ModalCreateCapacityComponent
   ],
-  providers: [
-  ]
+  providers: [NgxSmartModalService],
 })
 export class CapacityModule { }

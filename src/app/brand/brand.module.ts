@@ -6,6 +6,9 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { BrandRoutingModule } from './brand-routing.module';
 import { BrandComponent } from './brand.component';
+import {DataTableModule} from 'angular2-datatable';
+import { ModalCreateBrandComponent } from './modal-create-brand/modal-create-brand.component';
+import {NgxSmartModalModule, NgxSmartModalService} from 'ngx-smart-modal';
 
 @NgModule({
   imports: [
@@ -13,12 +16,14 @@ import { BrandComponent } from './brand.component';
     TranslateModule,
     CoreModule,
     SharedModule,
-    BrandRoutingModule
+    BrandRoutingModule,
+    DataTableModule,
+    NgxSmartModalModule.forRoot()
   ],
   declarations: [
-    BrandComponent
+    BrandComponent,
+    ModalCreateBrandComponent
   ],
-  providers: [
-  ]
+  providers: [NgxSmartModalService],
 })
 export class BrandModule { }

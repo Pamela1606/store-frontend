@@ -1,8 +1,6 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
 import {CategoryService} from '@app/shared/service/category.service';
 import {Category} from '@app/shared/model/category';
-import { DialogService} from 'ng2-bootstrap-modal';
-import {ModalCrearCategoryComponent} from '@app/category/modal-create-category/modal-crear-category.component';
 import {NgxSmartModalService} from 'ngx-smart-modal';
 import swal from 'sweetalert2';
 
@@ -30,7 +28,7 @@ export class CategoryComponent implements OnInit, AfterViewInit {
       this.data = value;
     });
   }
-  onEditCategory(item: any){}
+  onEditCategory(item: any) {}
 
   ngAfterViewInit() {
     const pen: Object = {
