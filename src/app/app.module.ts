@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -22,6 +22,9 @@ import {ItemImageModule} from '@app/item-image/item-image.module';
 import {SaleDetailModule} from '@app/sale-detail/sale-detail.module';
 import {SaleModule} from '@app/sale/sale.module';
 import {CustomerModule} from '@app/customer/customer.module';
+import {BootstrapModalModule} from 'ng2-bootstrap-modal';
+import {ModalCrearCategoryComponent} from '@app/category/modal-create-category/modal-crear-category.component';
+import {NgxSmartModalModule, NgxSmartModalService} from 'ngx-smart-modal';
 
 
 
@@ -31,6 +34,7 @@ import {CustomerModule} from '@app/customer/customer.module';
     FormsModule,
     HttpClientModule,
     TranslateModule.forRoot(),
+    BootstrapModalModule.forRoot({container:document.body}),
     NgbModule,
     CoreModule,
     SharedModule,
@@ -47,12 +51,16 @@ import {CustomerModule} from '@app/customer/customer.module';
     SaleModule,
     CustomerModule,
     AboutModule,
+    ReactiveFormsModule,
+
+
 
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
-  declarations: [AppComponent],
-  providers: [
+  declarations: [AppComponent,
+
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

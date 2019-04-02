@@ -1,0 +1,31 @@
+
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-basic-title">Customer</h4>
+  <button type="button" class="close" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="model">
+<div class="modal-body">
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Full name</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="name" placeholder="">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email address</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="email" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Nit</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingresar Nit">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Numero de Teléfono</label>
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingresar número de telefono">
+    </div>
+</div>
+<div class="modal-footer">
+  <button type="submit" class="btn btn-outline-dark">Save</button>
+</div>
+</form>

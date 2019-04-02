@@ -6,15 +6,22 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerComponent } from './customer.component';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
-  declarations: [CustomerComponent],
+  declarations: [CustomerComponent, ModalComponent],
   imports: [
     CommonModule,
     TranslateModule,
     CoreModule,
     SharedModule,
+    ReactiveFormsModule,
+    FormsModule,
     CustomerRoutingModule
+  ],
+  entryComponents: [
+    ModalComponent
   ],
   providers: [
   ]

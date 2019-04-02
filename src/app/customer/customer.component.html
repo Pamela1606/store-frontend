@@ -1,3 +1,21 @@
-<p>
-  customer works!
-</p>
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="model">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Full name</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="name" placeholder="">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" formControlName="" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Nit</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingresar Nit">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Numero de Teléfono</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingresar número de telefono">
+  </div>
+  <button type="submit"> Guardar</button>
+</form>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open()">Launch demo modal</button>

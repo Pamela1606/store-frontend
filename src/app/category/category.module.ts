@@ -6,6 +6,9 @@ import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
 import { CategoryRoutingModule } from './category-routing.module';
 import { CategoryComponent } from './category.component';
+import {DataTableModule} from 'angular2-datatable';
+import { ModalCrearCategoryComponent } from './modal-create-category/modal-crear-category.component';
+import {NgxSmartModalModule, NgxSmartModalService} from 'ngx-smart-modal';
 
 @NgModule({
   imports: [
@@ -13,12 +16,14 @@ import { CategoryComponent } from './category.component';
     TranslateModule,
     CoreModule,
     SharedModule,
-    CategoryRoutingModule
+    CategoryRoutingModule,
+    DataTableModule,
+    NgxSmartModalModule.forRoot(),
   ],
   declarations: [
-    CategoryComponent
+    CategoryComponent,
+    ModalCrearCategoryComponent
   ],
-  providers: [
-  ]
+  providers: [NgxSmartModalService],
 })
 export class CategoryModule { }

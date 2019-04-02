@@ -1,0 +1,26 @@
+<ngx-smart-modal #popupOne [identifier]="'popupOne'">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form_main">
+          <h4 class="heading"><strong>Quick </strong> Contact <span></span></h4>
+          <div class="form">
+              <input
+                #name
+                type="text"
+                required=""
+                placeholder="Please input your Name"
+                value="" name="name"
+                class="txt">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div>
+  <button class="btn-primary" (click)="popupOne.close()">Cancelar</button>
+  <button class="btn-primary" (click)="onCreate(name.value)">Crear</button>
+</div>
+
+</ngx-smart-modal>

@@ -1,7 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class= "navbar navbar-expand-lg navbar-dark bg-dark" >
+    <a class= "navbar-brand" href= "#" > Online Store </a>
+    <button class= "navbar-toggler" type= "button" data-toggle= "collapse"
+            data-target= "#navbarSupportedContent" aria-controls= "navbarSupportedContent"
+            aria-expanded= "false" aria-label= "Toggle navigation" > <span class= "navbar-toggler-icon" ></span>
+    </button>
+    <div class= "collapse navbar-collapse" id= "navbarSupportedContent" >
+      <ul class= "navbar-nav mr-auto" >
+        <li class= "nav-item active" > <a class= "nav-link" href= "#" > Inicio <span class= "sr-only" > (current) </span></a> </li>
+        <li class= "nav-item" > <a class= "nav-link" href= "#" > Link </a> </li>
+      </ul>
+      <form class= "form-inline my-2 my-lg-0" > <input class= "form-control mr-sm-2" type= "search" placeholder= "Search" aria-label= "Search" >
+        <button class= "btn btn-outline-success my-2 my-sm-0" type= "submit" > Search </button>
+      </form>
+    </div>
+  </nav>
+  <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" routerLink="/" translate>APP_NAME</a>
     <button class="navbar-toggler" type="button" aria-controls="navbar-menu"
             aria-label="Toggle navigation" (click)="toggleMenu()" [attr.aria-expanded]="!menuHidden">
@@ -10,13 +26,13 @@
     <div id="navbar-menu" class="collapse navbar-collapse float-xs-none" [ngbCollapse]="menuHidden">
       <div class="navbar-nav">
         
-        <a class="nav-item nav-link text-uppercase" routerLink="/about" routerLinkActive="active">
+        <a class="nav-item nav-link text-capitalize" routerLink="/about" routerLinkActive="active">
           <i class="fas fa-question-circle"></i>
           <span translate>About</span>
         </a>
       </div>
     </div>
-  </nav>
+  </nav> -->
 </header>
 
 
