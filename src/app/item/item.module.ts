@@ -9,6 +9,8 @@ import {ItemRoutingModule} from '@app/item/item-routing.module';
 import { ModalCreateItemComponent } from './modal-create-item/modal-create-item.component';
 import {DataTableModule} from 'angular2-datatable';
 import {NgxSmartModalModule, NgxSmartModalService} from 'ngx-smart-modal';
+import {UploadFileService} from '@app/shared/service/upload-file.service';
+import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {NgxSmartModalModule, NgxSmartModalService} from 'ngx-smart-modal';
     ItemRoutingModule,
     DataTableModule,
     NgxSmartModalModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [NgxSmartModalService],
+  providers: [NgxSmartModalService, UploadFileService],
 })
 export class ItemModule { }

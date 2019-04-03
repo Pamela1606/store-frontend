@@ -7,11 +7,26 @@
   <table class="table table-striped table-head-purple" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
     <thead>
     <tr>
-      <th style="width: 20%">
+      <th style="width: 5%">
         <mfDefaultSorter by="name">Nro</mfDefaultSorter>
       </th>
-      <th style="width: 50%">
+      <th style="width: 15%">
         <mfDefaultSorter by="email">Nombre</mfDefaultSorter>
+      </th>
+      <th style="width: 30%">
+        <mfDefaultSorter by="email">Descripción</mfDefaultSorter>
+      </th>
+      <th style="width: 15%">
+        <mfDefaultSorter by="email">Precio</mfDefaultSorter>
+      </th>
+      <th style="width: 15%">
+        <mfDefaultSorter by="email">Impuesto</mfDefaultSorter>
+      </th>
+      <th style="width: 15%">
+        <mfDefaultSorter by="email">Capacidad</mfDefaultSorter>
+      </th>
+      <th style="width: 10%">
+        <mfDefaultSorter by="email">Precio Importación</mfDefaultSorter>
       </th>
       <th> Operacion</th>
     </tr>
@@ -20,6 +35,12 @@
     <tr *ngFor="let item of mf.data">
       <td>{{item.id}}</td>
       <td>{{item.name}}</td>
+      <td>{{item.description}}</td>
+      <td>{{item.tax}}</td>
+      <td>{{item.capacity}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.importPrice}}</td>
+
       <td>
         <i class="fa fa-pencil-square-o" (click)="onEditItem(item)" title="Editar Item {{item.nombre}}"></i>
         <i class="fa fa-trash" (click)="onDeleteItem(item.id)" title="Eliminar Item {{item.nombre}}"></i>

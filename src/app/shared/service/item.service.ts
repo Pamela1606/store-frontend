@@ -8,7 +8,7 @@ import {Item} from '@app/shared/model/item';
 })
 export class ItemService {
 
-  private URL: string = 'items/';
+  private URL: string = '/items/';
   constructor(
     private httpClient: HttpClient) {
   }

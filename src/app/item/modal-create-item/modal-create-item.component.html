@@ -1,4 +1,5 @@
 <ngx-smart-modal #popupItem [identifier]="'popupItem'">
+  <form novalidate [formGroup]="model">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
@@ -6,51 +7,87 @@
           <h4 class="heading"><strong>Quick </strong> Item <span></span></h4>
           <div class="form">
             <input
-              #name
               type="text"
               required=""
               placeholder="Ingresar el Nombre"
-              value="" name="name"
+              value=""
+              formControlName="name"
+              name="name"
               class="txt">
           </div>
           <div class="form">
             <input
-              #name
               type="text"
               required=""
-              placeholder="Ingresar la Descripción"
-              value="" name="name"
+              formControlName="description"
+              placeholder="Descripción"
+              value=""
+              name="name"
               class="txt">
           </div>
           <div class="form">
             <input
-              #name
               type="text"
               required=""
+              formControlName="price"
+              placeholder="Ingresar el precio"
+              value=""
+              name="name"
+              class="txt">
+          </div>
+          <div class="form">
+            <input
+              type="text"
+              required=""
+              formControlName="tax"
               placeholder="Impuesto"
               value="" name="name"
               class="txt">
           </div>
+          <div class="form">
+            <input
+              type="text"
+              required=""
+              formControlName="capacity"
+              placeholder="Capacidad "
+              value="" name="name"
+              class="txt">
+          </div>
+          <div class="form">
+
           <div class="col-md-9">
-            <select class="form-control"  size="0" name="currentBrand"  (change)="onChangeCurrentBrand($event.target.value)">
+            <select class="form-control"  size="0" name="currentBrand" formControlName="brandId"  (change)="onChangeCurrentBrand($event.target.value)">
               <option value="{{brand.id}}" *ngFor="let brand of brands" >{{brand.name}}</option>
             </select>
             <div><br></div>
-            <select class="form-control"  size="0" name="currentCategory"  (change)="onChangeCurrentCategory($event.target.value)">
+            <select class="form-control"  size="0" name="currentCategory" formControlName="categoryId"  (change)="onChangeCurrentCategory($event.target.value)">
               <option value="{{category.id}}" *ngFor="let category of categories" >{{category.name}}</option>
             </select>
             <div><br></div>
-            <select class="form-control"  size="0" name="currentModelItem"  (change)="onChangeCurrentModelItem($event.target.value)">
+            <select class="form-control"  size="0" name="currentModelItem" formControlName="modelItemId"  (change)="onChangeCurrentModelItem($event.target.value)">
               <option value="{{modelItem.id}}" *ngFor="let modelItem of modelItems" >{{modelItem.name}}</option>
             </select>
           </div>
+
+            <input
+              type="text"
+              required=""
+              formControlName="importPrice"
+              placeholder="precio total "
+              value="" name="name"
+              class="txt">
+          </div>
+
+          <label class="btn btn-default">
+            <input type="file" (change)="selectFile($event)">
+          </label>
         </div>
       </div>
     </div>
   </div>
   <div>
     <button class="btn-primary" (click)="popupItem.close()">Cancelar</button>
-    <button class="btn-primary" (click)="onCreate(name.value)">Crear</button>
+    <button class="btn-primary" (click)="onCreate()">Crear</button>
   </div>
-
+  </form>
 </ngx-smart-modal>
