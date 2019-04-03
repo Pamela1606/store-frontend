@@ -1,0 +1,9 @@
+<ngx-smart-modal #upload [identifier]="'upload'">
+  <label class="btn btn-default">
+    <input type="file" (change)="selectFile($event)">
+  </label>
+
+  <button class="btn btn-success" [disabled]="!selectedFiles && upload.hasData()"
+          (click)="uploadImage(upload.getData().id)">Upload</button>
+
+</ngx-smart-modal>

@@ -11,11 +11,13 @@ import {DataTableModule} from 'angular2-datatable';
 import {NgxSmartModalModule, NgxSmartModalService} from 'ngx-smart-modal';
 import {UploadFileService} from '@app/shared/service/upload-file.service';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ModalImageComponent } from './modal-image/modal-image.component';
 
 @NgModule({
   declarations: [
     ItemComponent,
-    ModalCreateItemComponent
+    ModalCreateItemComponent,
+    ModalImageComponent
   ],
   imports: [
     CommonModule,

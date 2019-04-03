@@ -3,6 +3,8 @@ import {ItemService} from '@app/shared/service/item.service';
 import {Item} from '@app/shared/model/item';
 import {NgxSmartModalService} from 'ngx-smart-modal';
 import swal from 'sweetalert2';
+import {UploadFileService} from '@app/shared/service/upload-file.service';
+import {HttpEventType, HttpResponse} from '@angular/common/http';
 
 
 @Component({
@@ -14,7 +16,7 @@ export class ItemComponent implements OnInit, AfterViewInit {
 
   data: any [];
   items: Item[];
-  constructor(private itemService: ItemService, public ngxSmartModalService: NgxSmartModalService) {
+  constructor(private itemService: ItemService, public ngxSmartModalService: NgxSmartModalService, private uploadService: UploadFileService) {
     this.items = [];
     this.data = [];
   }
@@ -31,7 +33,14 @@ export class ItemComponent implements OnInit, AfterViewInit {
     });
   }
   onEditItem(item: any) {}
+  uploadImage(id: any) {
+    const props: Object = {
+      id: id,
 
+    };
+    this.ngxSmartModalService.setModalData(props, 'upload');
+    this.ngxSmartModalService.getModal('upload').open();
+  }
   ngAfterViewInit() {
     const pen: Object = {
       prop1: 'test',
@@ -41,13 +50,7 @@ export class ItemComponent implements OnInit, AfterViewInit {
     };
     this.ngxSmartModalService.setModalData(pen, 'popupItem');
 
-    const book: Object = {
-      prop1: 'test',
-      prop2: true,
-      prop3: [{ a: 'a', b: 'b' }, { c: 'c', d: 'd' }],
-      prop4: 327652175423
-    };
-    this.ngxSmartModalService.setModalData(book, 'popupItem2');
+
   }
   onDeleteItem(id: number) {
     if (undefined !== id  && null !== id) {
@@ -75,4 +78,6 @@ export class ItemComponent implements OnInit, AfterViewInit {
       });
     }
   }
+
+
 }
