@@ -5,4 +5,5 @@ export class Item {
   price: number;
   tax: number;
   import_price: number;
+  categoryId: number;
 }

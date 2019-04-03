@@ -16,7 +16,9 @@ export class ItemComponent implements OnInit, AfterViewInit {
 
   data: any [];
   items: Item[];
-  constructor(private itemService: ItemService, public ngxSmartModalService: NgxSmartModalService, private uploadService: UploadFileService) {
+  constructor(private itemService: ItemService,
+              public ngxSmartModalService: NgxSmartModalService,
+              private uploadService: UploadFileService) {
     this.items = [];
     this.data = [];
   }

@@ -1,6 +1,10 @@
 <app-modal></app-modal>
+<select class="form-control"  size="0" name="currentCategory" formControlName="categoryId"  (change)="onChangeCurrentCategory($event.target.value)">
+  <option value="-1"></option>
+  <option value="{{category.id}}" *ngFor="let category of categories" >{{category.name}}</option>
+</select>
 <div class="row">
-  <div class="col-md-4" *ngFor = "let item of items">
+  <div class="col-md-4" *ngFor = "let item of currentsData">
     <div class="card rounded" >
       <div class="card-image">
         <span class="card-notify-badge">CAT</span>

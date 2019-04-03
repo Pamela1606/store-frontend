@@ -7,6 +7,10 @@ import {Item} from '@app/shared/model/item';
 import {ItemService} from '@app/shared/service/item.service';
 import {NgxSmartModalService} from 'ngx-smart-modal';
 import {IImage} from 'ng-simple-slideshow';
+import {Brand} from '@app/shared/model/brand';
+import {BrandService} from '@app/shared/service/brand.service';
+import {Category} from '@app/shared/model/category';
+import {CategoryService} from '@app/shared/service/category.service';
 
 export interface ImgGallery {
   url?: number;
@@ -25,12 +29,24 @@ export class ItemImageComponent implements OnInit {
   itemImages: ItemImage[];
   data: any [];
   items: Item[];
+  filter: Item[];
+  brands: Brand[];
+  categories: Category[];
+  currentsData: Item[];
 
-  constructor(private itemImageService: ItemImageService, private itemService: ItemService,
-              private uploadService: UploadFileService, public ngxSmartModalService: NgxSmartModalService) {
+  constructor(private itemImageService: ItemImageService,
+              private itemService: ItemService,
+              private uploadService: UploadFileService,
+              public ngxSmartModalService: NgxSmartModalService,
+              private brandService: BrandService,
+              private categoryService: CategoryService,) {
     this.itemImages = [];
     this.items = [];
     this.data = [];
+    this.brands = [];
+    this.categories = [];
+    this.currentsData = [];
+    this.filter = [];
   }
 
   ngOnInit() {
@@ -43,7 +59,15 @@ export class ItemImageComponent implements OnInit {
     this.itemService.getItems().subscribe(value => {
       console.log(this.items)
       this.items = value;
+      this.currentsData = this.items
       this.data = value;
+    });
+    this.brandService.getBrands().subscribe(value => {
+      this.brands = value;
+      console.log('brandsssss',this.brands);
+    });
+    this.categoryService.getCategories().subscribe(value => {
+      this.categories = value;
     });
   }
   selectFile(event: any) {
@@ -76,7 +100,10 @@ export class ItemImageComponent implements OnInit {
       imgs: this.getGaleryImage(item),
 
     };
-    this.ngxSmartModalService.setModalData(props, 'galery');
+
+    this.ngxSmartModalService.setModalData(props,'galery',true);
+
+
     this.ngxSmartModalService.getModal('galery').open();
   }
 
@@ -98,5 +125,16 @@ export class ItemImageComponent implements OnInit {
     }
     console.log(imgs);
     return imgs;
+  }
+
+  onChangeCurrentCategory(id: any) {
+    if(id == -1) {
+      this.currentsData = this.items;
+    } else {
+      this.currentsData =  this.items.filter(t => t.categoryId == id);
+      console.log( ' list ', this.currentsData);
+      console.log('filter ID', id);
+    }
+
   }
 }

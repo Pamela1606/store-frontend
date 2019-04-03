@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {IImage} from 'ng-simple-slideshow';
+import {NgxSmartModalService} from 'ngx-smart-modal';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent implements OnInit, OnDestroy {
   imageUrls: (string | IImage)[] = [
     { url: 'assets/imgs/slider/1.jpeg', caption: 'The first slide', href: '#config' },
     { url: 'assets/imgs/slider/2.jpeg', clickAction: () => alert('custom click function') },
@@ -34,9 +35,15 @@ export class ModalComponent implements OnInit {
   lazyLoad: boolean = false;
   hideOnNoSlides: boolean = false;
   width: string = '100%';
-  constructor() { }
+  constructor(public ngxSmartModalService: NgxSmartModalService) { }
 
   ngOnInit() {
+   setTimeout(() => {
+     console.log('Imaddasdasds')
+   })
+  }
+  ngOnDestroy(){
+    console.log('saliendo');
   }
 
 }
