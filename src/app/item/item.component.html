@@ -44,8 +44,7 @@
 
       <td>
         <i class="fa fa-pencil-square-o" (click)="onEditItem(item)" title="Editar Item {{item.nombre}}"></i>
-        <i class="fa fa-pencil-square-o"  title="Editar Item {{item.nombre}}">
-          <button (click)="uploadImage(item.id)">hola</button></i>
+        <i class="fa fa-images" (click)="uploadImage(item.id)" title="Subir Imagen {{item.nombre}}">  </i>
         <i class="fa fa-trash" (click)="onDeleteItem(item.id)" title="Eliminar Item {{item.nombre}}"></i>
       </td>
     </tr>

@@ -3,8 +3,16 @@ import {ItemImageService} from '@app/shared/service/item-image.service';
 import {ItemImage} from '@app/shared/model/item-image';
 import {HttpEventType, HttpResponse} from '@angular/common/http';
 import {UploadFileService} from '@app/shared/service/upload-file.service';
+import {Item} from '@app/shared/model/item';
+import {ItemService} from '@app/shared/service/item.service';
+import {NgxSmartModalService} from 'ngx-smart-modal';
+import {IImage} from 'ng-simple-slideshow';
 
-
+export interface ImgGallery {
+  url?: number;
+  backgroundSize?: string;
+  backgroundPosition?: string;
+}
 @Component({
   selector: 'app-item-image',
   templateUrl: './item-image.component.html',
@@ -15,14 +23,27 @@ export class ItemImageComponent implements OnInit {
   currentFileUpload: File;
   progress: { percentage: number } = { percentage: 0 };
   itemImages: ItemImage[];
+  data: any [];
+  items: Item[];
 
-  constructor(private itemImageService: ItemImageService, private uploadService: UploadFileService) {
+  constructor(private itemImageService: ItemImageService, private itemService: ItemService,
+              private uploadService: UploadFileService, public ngxSmartModalService: NgxSmartModalService) {
     this.itemImages = [];
+    this.items = [];
+    this.data = [];
   }
 
   ngOnInit() {
     this.itemImageService.getItemImages().subscribe(value => {
       this.itemImages = value;
+    });
+    this.loadData();
+  }
+  loadData() {
+    this.itemService.getItems().subscribe(value => {
+      console.log(this.items)
+      this.items = value;
+      this.data = value;
     });
   }
   selectFile(event: any) {
@@ -48,5 +69,34 @@ export class ItemImageComponent implements OnInit {
     })
 
     this.selectedFiles = undefined
+  }
+  goToGalery(item: any) {
+    console.log('uite,,a,dasd',item);
+    const props: Object = {
+      imgs: this.getGaleryImage(item),
+
+    };
+    this.ngxSmartModalService.setModalData(props, 'galery');
+    this.ngxSmartModalService.getModal('galery').open();
+  }
+
+  getGaleryImage(images:any[]){
+    const imgs: ImgGallery [] = [];
+  let  imageUrls: (string | IImage)[] = [
+      { url: 'assets/imgs/slider/1.jpeg', caption: 'The first slide', href: '#config' },
+      { url: 'assets/imgs/slider/2.jpeg', clickAction: () => alert('custom click function') },
+      { url: 'assets/imgs/slider/3.jpeg', backgroundSize: 'contain', backgroundPosition: 'center' },
+      { url: 'assets/imgs/slider/4.jpeg', backgroundSize: 'contain', backgroundPosition: 'center' }
+    ];
+    for (let i = 0; i < images.length; i++) {
+      const img: ImgGallery = {
+        url: images[i]['url'],
+        backgroundSize: 'contain',
+        backgroundPosition: 'center'
+      }
+      imgs.push(img);
+    }
+    console.log(imgs);
+    return imgs;
   }
 }

@@ -4,8 +4,9 @@
     <div class="row">
       <div class="col-md-12">
         <div class="form_main">
-          <h4 class="heading"><strong>Quick </strong> Item <span></span></h4>
+          <h4 class="heading"><strong> Item </strong><span></span></h4>
           <div class="form">
+            <label>Nombre:</label>
             <input
               type="text"
               required=""
@@ -16,16 +17,18 @@
               class="txt">
           </div>
           <div class="form">
+            <label>Descripción:</label>
             <input
               type="text"
               required=""
               formControlName="description"
-              placeholder="Descripción"
+              placeholder="Ingresar descripción"
               value=""
               name="name"
               class="txt">
           </div>
           <div class="form">
+            <label>Precio:</label>
             <input
               type="text"
               required=""
@@ -36,48 +39,51 @@
               class="txt">
           </div>
           <div class="form">
+            <label>Impuesto:</label>
             <input
               type="text"
               required=""
               formControlName="tax"
-              placeholder="Impuesto"
+              placeholder="Ingresar impuesto"
               value="" name="name"
               class="txt">
           </div>
           <div class="form">
+            <label>Capacidad:</label>
             <input
               type="text"
               required=""
               formControlName="capacity"
-              placeholder="Capacidad "
+              placeholder="Ingresar la capacidad "
               value="" name="name"
               class="txt">
           </div>
           <div class="form">
-
           <div class="col-md-9">
+            <label>Marca:</label>
             <select class="form-control"  size="0" name="currentBrand" formControlName="brandId"  (change)="onChangeCurrentBrand($event.target.value)">
               <option value="{{brand.id}}" *ngFor="let brand of brands" >{{brand.name}}</option>
             </select>
             <div><br></div>
+            <label>Categoría:</label>
             <select class="form-control"  size="0" name="currentCategory" formControlName="categoryId"  (change)="onChangeCurrentCategory($event.target.value)">
               <option value="{{category.id}}" *ngFor="let category of categories" >{{category.name}}</option>
             </select>
             <div><br></div>
+            <label>Modelo:</label>
             <select class="form-control"  size="0" name="currentModelItem" formControlName="modelItemId"  (change)="onChangeCurrentModelItem($event.target.value)">
               <option value="{{modelItem.id}}" *ngFor="let modelItem of modelItems" >{{modelItem.name}}</option>
             </select>
           </div>
-
+            <label>Importe total:</label>
             <input
               type="text"
               required=""
               formControlName="importPrice"
-              placeholder="precio total "
+              placeholder="Ingresar importe total "
               value="" name="name"
               class="txt">
           </div>
-
           <label class="btn btn-default">
             <input type="file" (change)="selectFile($event)">
           </label>

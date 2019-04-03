@@ -1,0 +1,8 @@
+<ngx-smart-modal #galery [identifier]="'galery'">
+  <slideshow *ngIf=" galery.hasData()" #slideshow
+             [imageUrls]="galery.getData().imgs"
+             [height]="height"
+             [autoPlay]="autoPlay"
+
+  ></slideshow>
+</ngx-smart-modal>

@@ -1,6 +1,25 @@
-<label class="btn btn-default">
-  <input type="file" (change)="selectFile($event)">
-</label>
+<app-modal></app-modal>
+<div class="row">
+  <div class="col-md-4" *ngFor = "let item of items">
+    <div class="card rounded" >
+      <div class="card-image">
+        <span class="card-notify-badge">CAT</span>
+        <span class="card-notify-year">ITE-{{item.modelItemId}}</span>
+        <img class="img-fluid" src="{{item.itemImages[0]['url']}}" width="280" height="180" alt="Alternate Text" />
+      </div>
+      <div class="card-image-overlay m-auto">
+        <span class="card-detail-badge">Precio</span>
+        <span class="card-detail-badge">{{item.price}}</span>
+        <span class="card-detail-badge">{{item.importPrice}}</span>
+      </div>
+      <div class="card-body text-center">
+        <div class="ad-title m-auto">
+          <h5>{{item.name}}</h5>
+        </div>
+        <a class="ad-btn" (click)="goToGalery(item.itemImages)">View</a>
+      </div>
+    </div>
+  </div>
 
-<button class="btn btn-success" [disabled]="!selectedFiles"
-        (click)="upload()">Upload</button>
+
+</div>
